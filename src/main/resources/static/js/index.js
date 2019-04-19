@@ -36,7 +36,7 @@ function login() {
                 } else {
                     console.log('FAILED');
                 }
-            }, {scope: 'email'}); // which data to access from user profile
+            }, {scope: 'email,pages_show_list'}); // which data to access from user profile
         }
     });
 }
