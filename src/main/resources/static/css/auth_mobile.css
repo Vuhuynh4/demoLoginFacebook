@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 26, 2018, 10:14:01 PM
+    Author     : vu
+*/
+
+.btn-back a {
+    color: #b0006e;
+}
+.btn-back {
+    padding: 10px 0;
+}
+.f7-icons {
+    font-size: 12pt;
+    padding-right: 10px;
+}
+.modal{
+    position: relative;
+    left: inherit;
+    margin: 0;
+
+}
+.modal.modal-in{
+    margin: 0 auto;
+    margin-top: 25px;
+    top: 0;
+}
+
+.text-center {
+    text-align: center
+}

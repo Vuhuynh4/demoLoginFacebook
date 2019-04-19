@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Error - MoMo</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Error"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable = yes"/>
+    <link rel='stylesheet prefetch' th:href='@{/css/404.css}'/>
+</head>
+<body>
+<section class="hero is-fullheight is-info">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h3 class="title is-1">
+                    <a href="https://momo.vn">
+                        <i class="fa fa-map-signs" aria-hidden="true"></i>
+                        <strong>Error</strong>
+                    </a>
+                </h3>
+                <h4 class="title is-2">
+                   Thông tin truy cập không đúng. Xin vui lòng thử lại sau.
+                </h4>
+                <a th:href="@{/}" style="color: #fff">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                    <span style="padding-left: 10px;" href="https://momo.vn">Trở về trang chủ</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a href="https://momo.vn">MoMo.Vn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

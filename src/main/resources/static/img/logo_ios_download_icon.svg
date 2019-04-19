@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135px" height="41px" viewBox="0 0 135 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Button - App Store</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web01" transform="translate(-302.000000, -927.000000)">
+            <g id="Group-18" transform="translate(183.000000, 107.000000)">
+                <g id="Group-32" transform="translate(118.500000, 778.484967)">
+                    <g id="Group-13" transform="translate(0.604527, 42.001883)">
+                        <g id="Button---App-Store" transform="translate(0.533472, 0.000000)">
+                            <rect id="Button" stroke="#DADADA" stroke-width="0.5" fill="#FFFFFF" x="0" y="0" width="133.333333" height="40" rx="6"></rect>
+                            <g id="Group-22" transform="translate(39.000000, 7.944444)" fill="#4D4D4D" font-size="8">
+                                <text id="Apple-app-store" font-family="SFUIDisplay-Bold, SF UI Display" font-weight="bold">
+                                    <tspan x="0" y="18.7777778">APPLE APP STORE</tspan>
+                                </text>
+                                <text id="Tải-ứng-dụng-từ" font-family="SFUIDisplay-Light, SF UI Display" font-weight="300">
+                                    <tspan x="0" y="8.74444464">TẢI ỨNG DỤNG TỪ</tspan>
+                                </text>
+                            </g>
+                            <path d="M21.9988655,14.0284034 C21.4207918,14.7689131 20.4246256,15.3426895 19.4620614,15.3130216 C19.2863198,14.3583099 19.7377169,13.3760072 20.2842702,12.7138206 C20.8864304,11.984288 21.9179828,11.4244555 22.7999616,11.3636364 C22.9486431,12.3613664 22.5385795,13.3371423 21.9988655,14.0284034 Z M26.7676768,23.4058199 C26.3811048,24.2605509 26.196145,24.6417828 25.6983592,25.3968298 C25.0043139,26.4512255 24.0256921,27.7637315 22.8133429,27.775302 C21.7354019,27.7850924 21.4588543,27.0754372 19.9964228,27.0834475 C18.5342887,27.0917545 18.2288968,27.7874658 17.1512531,27.7776754 C15.9386066,27.7666983 15.0111313,26.5811707 14.3167885,25.5270717 C12.3750078,22.5789767 12.1722062,19.1191111 13.3696872,17.2797039 C14.2207403,15.9725381 15.5630371,15.2077007 16.8253432,15.2077007 C18.1108437,15.2077007 18.9187791,15.9105323 19.9812573,15.9105323 C21.012215,15.9105323 21.6402457,15.206514 23.1261689,15.206514 C24.2493091,15.206514 25.439356,15.8167818 26.2874354,16.8711775 C23.5088751,18.3901718 23.9602722,22.3475674 26.7676768,23.4058199 Z" id="Icon---Apple" fill="#000000"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

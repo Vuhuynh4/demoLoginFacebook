@@ -1,0 +1,518 @@
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#momoPassword {
+    -webkit-text-security: disc;
+}
+
+.navbar.navbar-default{
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+}
+.navbar .navbar-header .navbar-brand{
+    height: auto;
+}
+.navbar .navbar-header .navbar-brand .logo{
+    height: 100px;
+}
+.set-border-right{
+    border-right: 1px solid #e8e8e8;
+}
+.steps .step-1,.steps .step-2,.steps .step-3{
+    position: absolute;
+    top: 5px;
+    overflow: hidden;
+}
+.steps .step-1{
+    left: -130px;
+    width: 260px;
+    color: #c7c7c7;
+}
+.steps .step-2{
+    width: 100%;
+    margin: 0 auto;
+    color: #c7c7c7;
+}
+.steps .step-3{
+    right: -35px;
+    width: 72px;
+    color: #c7c7c7;
+}
+.steps .active>h4{
+    font-weight: bold;
+    color: #333;
+}
+.steps .active>.circle{
+    color: #fff!important;
+}
+.img-background{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.text-bold{
+    font-weight: bold;
+	width: 500px;
+}
+.text-price{
+    font-weight: bold;
+}
+.text-pink{
+    color: #af206f;
+}
+.text-success{
+    color: #25ae88;
+}
+.text-failed{
+    color: #e5272e;
+}
+.font-normal{
+    font-weight: normal;
+}
+.dis-flex-row{
+    display: inline-block;
+    flex-direction: row;
+}
+.dis-flex-col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.dis-flex-row.payment-failed{
+    justify-content: center;
+}
+#captchaReloadButton:hover{
+    text-decoration: none;
+}
+/*-----Override-Bootstrap---*/
+input[type="text"],input[type="password"]{
+	/*    border-radius: 0;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.8);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.8);*/
+}
+label{
+    padding-left: 35px!important;
+}
+.btn{
+    background-color: #af206f;
+    color: #fff;
+    border: none;
+}
+.control-label{
+    text-align: left!important;
+
+}
+.row-no-padding-right {
+    padding-right: 0 !important;
+}
+ul{
+    list-style: none;
+    padding-left: 0 !important;
+}
+footer ul a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+footer .copy-right {
+    margin-top: 25px;
+    font-size: 13px;
+}
+footer .copy-right .change-languge img {
+    padding: 0 10px;
+}
+footer a:hover {
+    text-decoration: none;
+}
+footer:before,
+footer:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+footer:after {
+    clear: both;
+}
+.pre-footer {
+    height: 55px;
+}
+@media (max-width:320px) { 
+    .navbar{
+        display: none;
+    }
+    .text-bold{
+        word-wrap: break-word;
+        width: 100px;
+    }
+    .privacy{
+        font-size: 12px;
+        font-weight: 400;
+        padding-right: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #buttonConfirm{
+        width: 100%;
+    }
+    footer {
+        /*position: absolute;*/
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:not(:first-child) {
+        /*padding-left: 40px;*/
+    }
+    .navbar .navbar-header .navbar-brand{
+        margin: 0 auto;
+        float: none;
+    }
+    .navbar .navbar-header .navbar-brand .logo{
+        margin: 0 auto;
+    }
+    .steps .step-1, .steps .step-2, .steps .step-3{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .steps h4{
+        font-size: 14px;
+        flex:1;
+    }
+    .set-border-right {
+        border-right: none;
+        border-bottom: 2px solid #e8e8e8;
+    }
+    label{
+        padding-left: 15px!important;
+    }
+    .btn.btn-default{
+        float: none!important;
+        font-size: 16px;
+        width: 100%;
+    }
+    .form-horizontal .form-group:last-child{
+        text-align: center;
+    }
+    .dis-flex-col h4{font-size: 14px;}
+}
+@media (max-width:480px) {
+	.store{
+		display: inline-flex;
+	}
+	.store{
+		list-style: none;
+		padding-left: 0 !important;
+	}
+	.store li{
+		padding: 5px;
+	}
+    .navbar{
+        display: block;
+    }
+    .text-bold{
+        word-wrap: break-word;
+        width: 150px;
+    }
+    .privacy{
+        font-size: 12px;
+        font-weight: 400;
+        padding-right: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #buttonConfirm{
+        width: 100%;
+    }
+    footer {
+        /*position: absolute;*/
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:not(:first-child) {
+        /*padding-left: 40px;*/
+    }
+    .navbar .navbar-header .navbar-brand{
+        margin: 0 auto;
+        float: none;
+    }
+    .navbar .navbar-header .navbar-brand .logo{
+        margin: 0 auto;
+    }
+    .steps .step-1, .steps .step-2, .steps .step-3{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .steps h4{
+        font-size: 14px;
+        flex:1;
+    }
+    .set-border-right {
+        border-right: none;
+        border-bottom: 2px solid #e8e8e8;
+    }
+    label{
+        padding-left: 15px!important;
+    }
+    .btn.btn-default{
+        float: none!important;
+        font-size: 16px;
+        width: 100%;
+    }
+    .form-horizontal .form-group:last-child{
+        text-align: center;
+    }
+    .dis-flex-col h4{font-size: 14px;}
+}
+@media (min-width: 481px) and (max-width:767px){
+    .navbar{
+        display: none;
+    }
+    .text-bold{
+        word-wrap: break-word;
+        width: 230px;
+    }
+    .privacy{
+        font-size: 12px;
+        font-weight: 400;
+        padding-right: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+    #buttonConfirm{
+        width: 100%;
+    }
+    footer {
+        /*position: absolute;*/
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:not(:first-child) {
+        /*padding-left: 40px;*/
+    }
+    .navbar .navbar-header .navbar-brand{
+        margin: 0 auto;
+        float: none;
+    }
+    .navbar .navbar-header .navbar-brand .logo{
+        margin: 0 auto;
+    }
+    .steps .step-1, .steps .step-2, .steps .step-3{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .steps h4{
+        font-size: 14px;
+        flex:1;
+    }
+    .set-border-right {
+        border-right: none;
+        border-bottom: 2px solid #e8e8e8;
+    }
+    label{
+        padding-left: 15px!important;
+    }
+    .btn.btn-default{
+        float: none!important;
+        font-size: 16px;
+        width: 100%;
+    }
+    .form-horizontal .form-group:last-child{
+        text-align: center;
+    }
+    .dis-flex-col h4{font-size: 14px;}
+}   
+@media (min-width: 768px) and (max-width: 1199px){
+    .privacy{
+        font-size: 12px;
+        font-weight: 400;
+        padding-right: 0;
+        margin-top: 10px;
+        text-align: right;
+    }
+    footer {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:not(:first-child) {
+        padding-left: 40px;
+    }
+    .steps h4{
+        font-size: 15px;
+    }
+    .payment{
+        top: 20px;
+    }
+    .navbar .navbar-header{
+        float: none;
+    }
+    .navbar .navbar-header .navbar-brand{
+        margin: 0 auto;
+        float: none;
+    }
+    .navbar .navbar-header .navbar-brand .logo{
+        margin: 0 auto;
+    }
+    .set-border-right{
+        border-right: none;
+    }
+}
+@media (min-width: 1200px){
+    .privacy{
+        font-size: 12px;
+        font-weight: 400;
+        padding-right: 0;
+        margin-top: 10px;
+        text-align: right;
+    }
+    footer {
+        /*position: absolute;*/
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+    footer ul li:not(:first-child) {
+        padding-left: 40px;
+    }
+    .container{
+        width: 1000px;
+    }
+}
+
+#loading_wrapper {
+    background-color: black;
+    opacity: 1;
+    display: none;
+    position: fixed;
+    left: 50%;
+    z-index: 2000000000;
+    border-radius: 8px;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    margin: -50px 0px 0 -30px;
+}
+
+#overlay {
+    display: none;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1999999999;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+}
+
+/*.modal-in {*/
+    /*height: 200px;*/
+/*}*/
+
+.modal-out {
+    height: 200px;
+}
+
+/*loading cs*/
+#loader-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #dadada;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes lds-dual-ring {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.lds-dual-ring {
+    position: relative;
+}
+.lds-dual-ring div {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    left: 60px;
+    border-radius: 50%;
+    border: 8px solid #000;
+    border-color: #b0006d transparent #b0006d transparent;
+    -webkit-animation: lds-dual-ring 1s linear infinite;
+    animation: lds-dual-ring 1s linear infinite;
+}
+.lds-dual-ring {
+    width: 200px !important;
+    height: 200px !important;
+    top: 50%;
+    left: -50%;
+    -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+    transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+}
+
+.loader {
+    top: 30%;
+    left: 50%;
+    position: absolute;
+}

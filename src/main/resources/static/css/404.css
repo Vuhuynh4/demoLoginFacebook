@@ -1,0 +1,71 @@
+body{font-weight:400;}
+a:hover,strong{color:#363636;
+    text-decoration: none;
+}
+
+html{background-color:#f5f5f5;}
+body{color:#4a4a4a;}
+section{display:block;}
+a{cursor:pointer;
+    text-decoration: none;}
+.hero{-webkit-box-orient:vertical;}
+body,h3,h4,html,li,ul{margin:0;padding:0;}
+h3,h4{font-size:100%;font-weight:400;}
+ul{list-style:none;}
+html{box-sizing:border-box;font-size:14px;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;min-width:300px;overflow-x:hidden;overflow-y:scroll;text-rendering:optimizeLegibility;}
+*,:after,:before{box-sizing:inherit;}
+body{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+body{font-size:1rem;line-height:1.428571428571429;}
+span{font-style:inherit;font-weight:inherit;}
+strong{font-weight:700;}
+.tabs{white-space:nowrap;}
+.has-text-centered{text-align:center;}
+.container{position:relative;}
+.subtitle:not(:last-child),.title:not(:last-child){margin-bottom:20px;}
+.subtitle,.title{font-weight:300;word-break:break-word;}
+.title a:hover{border-bottom:1px solid;}
+.title strong{font-weight:500;}
+.title{color:#363636;font-size:28px;line-height:1;}
+.title strong{color:inherit;}
+.title+.subtitle{margin-top:-10px;}
+.title.is-1{font-size:48px;}
+@media screen and (min-width: 769px){
+    .title+.subtitle{margin-top:-15px;}
+}
+.subtitle{color:#4a4a4a;font-size:18px;line-height:1.125;}
+.subtitle.is-4{font-size:24px;}
+.fa{font-size:21px;}
+@media screen and (min-width: 980px){
+    .container{margin:0 auto;max-width:960px;}
+}
+.fa{text-align:center;vertical-align:top;}
+.tabs{overflow:hidden;}
+.tabs a{-webkit-box-align:center;}
+.tabs{display:-webkit-box;display:-ms-flexbox;}
+.tabs a{border-bottom:1px solid #dbdbdb;}
+.tabs{-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;line-height:24px;overflow-x:auto;}
+.tabs a{-ms-flex-align:center;align-items:center;color:#4a4a4a;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin-bottom:-1px;padding:6px 12px;vertical-align:top;}
+.tabs a:hover{border-bottom-color:#363636;color:#363636;}
+.tabs li{display:block;}
+.tabs ul{-webkit-box-align:center;-ms-flex-align:center;align-items:center;border-bottom:1px solid #dbdbdb;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;}
+.tabs.is-centered ul{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;}
+.hero .tabs ul{border-bottom:none;}
+.hero{display:-webkit-box;display:-ms-flexbox;}
+@media screen and (min-width: 1180px){
+    .container{max-width:1200px;}
+}
+.hero-foot{-ms-flex-negative:0;flex-shrink:0;}
+.hero-body{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:0;flex-shrink:0;padding:40px 20px;}
+@media screen and (min-width: 1240px){
+    .hero-body{padding-left:0;padding-right:0;}
+}
+.hero{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;background-color:#fff;display:flex;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;}
+.hero.is-info{background-color:#ad0087;color:#fff;}
+.hero.is-info .title{color:#fff;}
+.hero.is-info .title a,.hero.is-info .title strong{color:inherit;}
+.hero.is-info .subtitle{color:rgba(255, 255, 255, .9);}
+.hero.is-info .tabs a{color:#fff;opacity:.9;}
+.hero.is-info .tabs a:hover{opacity:1;}
+.hero.is-fullheight{min-height:100vh;}
+.hero.is-fullheight .hero-body{-webkit-box-align:center;-ms-flex-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;}
+.hero.is-fullheight .hero-body>.container{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-negative:1;flex-shrink:1;}

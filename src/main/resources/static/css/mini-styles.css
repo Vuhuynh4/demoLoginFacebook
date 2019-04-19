@@ -1,0 +1,140 @@
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #212121;
+    font-size: 14px;
+    line-height: 1.5;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    background: #fff;
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+img.icon-download {
+    width: 80%;
+}
+
+.list-block ul:before {
+    content: none
+}
+
+input[type="number"] {
+    -webkit-text-security: disc;
+}
+
+.logo {
+    background: url('../images/logo-1.png') no-repeat center;
+    background-size: 120px 120px;
+    height: 100%;
+}
+
+.logo-download {
+    width: 100px;
+}
+
+/* .modal.modal-in {
+    width: 300px
+} */
+
+.logo-momo {
+    text-align: center;
+}
+
+.logo-momo img {
+    width: 50px;
+
+}
+
+.download {
+    font-size: 14px;
+    color: #8ba8b4;
+    background: #fff;
+    padding: 0px 10px;
+    position: relative;
+    top: -10px
+}
+
+.btn-download {
+    color: #000;
+    padding: 8px 56px;
+    font-weight: 500;
+    border: 1px solid #b0006e;
+    border-radius: 3px;
+}
+
+.modal {
+    text-align: center;
+    font-weight: 400;
+}
+
+.area-download,
+.open-app {
+    margin: 20px
+}
+
+.area-download {
+    border-top: 1px solid #dadada;
+}
+
+.open-app a {
+    color: #fff;
+    background-color: #b0006e;
+    padding: 8px 34px;
+    border-radius: 3px;
+}
+
+.modal-inner {
+    padding: 24px 24px 0px;
+    position: relative;
+}
+
+.login_sign_enter {
+    text-align: center;
+    margin: 30px auto 0;
+    width: 60%;
+    border-top: 1px #dadada solid;
+}
+
+.login_sign_enter .enter_line_or {
+    font-size: 14px;
+    color: #8ba8b4;
+    background: #fff;
+    padding: 0px 10px;
+    position: relative;
+}
+
+.modal {
+    width: 280px;
+    position: absolute;
+    z-index: 13500;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: 0;
+    top: 50%;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(1.185);
+    transform: translate3d(0, 0, 0) scale(1.185);
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+    color: #757575;
+    display: none;
+    background: #fff;
+    font-size: 16px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-overlay.modal-overlay-visible {
+    visibility: visible;
+    opacity: 0;
+}

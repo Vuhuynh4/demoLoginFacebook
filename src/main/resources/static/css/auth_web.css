@@ -1,0 +1,312 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 25, 2018, 10:29:49 PM
+    Author     : vu
+*/
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500
+}
+
+.auth-main-qr-content {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    max-width: 1024px;
+    min-height: 486px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: linear-gradient(to bottom right, #ad0087, #ff4091);
+}
+
+.auth-main-user-guide {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.result-logo-content {
+    padding: 40px 0 40px 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-image: linear-gradient(to right, #ad0087, #ff4091);
+}
+
+.result-main-content {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    max-width: 1024px;
+    min-height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;;
+}
+
+.result-main-text-content {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 60px 60px 40px 60px;
+}
+
+.result-main-btn-content {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 30px 60px 30px 60px;
+}
+
+body {
+    background: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    margin: 0;
+}
+
+.left-section {
+    background-image: url(../img/bg.png);
+    background-position-x: 804px;
+    background-size: cover;
+    color: #fff
+}
+
+.flex-center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.flex-vertical {
+    flex-direction: column;
+}
+
+.flex-item {
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    /* text-align: center; */
+}
+
+.text-center {
+    text-align: center
+}
+
+.main-left-banner {
+    padding: 100px 0px 100px 0px ;
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column 
+}
+
+.qr-pannel {
+    padding: 25px 0px 0px 0;  
+    height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column
+}
+
+.qr-img  {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: initial !important;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 30px;
+}
+
+@media (max-width:320px) { 
+    .guide1 {
+        width: 30px;
+    }
+    .guide2 {
+        width: 50px;
+    }
+    .guide3 {
+        width: 30px;
+    }
+    .column-user-guide{
+        padding: 0 5px 0 5px;
+    }
+    .number-guide{
+        width: 15px;
+        line-height: 15px;
+        font-size: 15px;
+    }    
+}
+
+@media (max-width:480px) {
+    .guide1 {
+        width: 40px;
+    }
+    .guide2 {
+        width: 60px;
+    }
+    .guide3 {
+        width: 40px;
+    }   
+    .column-user-guide{
+        padding: 0 15px 0 15px;
+    }
+    .number-guide{
+        width: 20px;
+        line-height: 20px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 481px) and (max-width:767px){
+    .guide1 {
+        width: 60px;
+    }
+    .guide2 {
+        width: 80px;
+    }
+    .guide3 {
+        width: 60px;
+    }
+    .column-user-guide{
+        padding: 0 30px 0 30px;
+    }
+    .number-guide{
+        width: 25px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 768px){
+    .guide1 {
+        width: 100px;
+    }
+    .guide2 {
+        width: 142px;
+    }
+    .guide3 {
+        width: 100px;
+    }
+    .column-user-guide{
+        padding: 0 50px 0 50px;
+    }
+    .number-guide{
+        width: 30px;
+        line-height: 30px;
+        font-size: 30px;
+    }
+}
+.center-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.focus-qr {
+    color: #af206f;
+    font-size: 16pt;
+}
+
+.waiting-for-scan-qr {
+    border: 1px solid #dadada;
+    padding: 6px;
+    margin-top: 20px
+}
+
+.back-bottom {
+    position: absolute;
+    bottom: 16px;
+}
+
+.back-bottom a {
+    color: #fff;
+    font-size: 14pt;
+    padding-left: 12px;
+}
+
+a {
+    color: #af206f
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.dislay-logo{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+.download-logo{
+    width: 60%;
+}
+
+.panel-white{
+    background-color: #fff;
+}
+
+.text-content{
+    font-weight: lighter;
+    font-size: 14px;
+    color:#f0f0f0;
+}
+
+.text-paragraph-bold{
+    font-weight: bold;
+    color:#666666;
+}
+
+.text-paragraph-bold2{
+    font-weight: lighter;
+    font-size: 15px;
+    color:#999999;
+}
+
+.icon-paragraph-sucess{
+    font-weight: lighter;
+    font-size: 18px;
+    color:#0cb34d;
+}
+
+.text-paragraph-result{
+    font-weight: lighter;
+    font-size: 18px;
+    color:#5f5d5d;
+}
+
+.icon-paragraph-error{
+    font-weight: lighter;
+    font-size: 18px;
+    color:#f90909;
+}
+
+.turnBack_header{
+    font-size: 15px;
+    padding-left: 10px;
+    color: #5f5d5d;
+}

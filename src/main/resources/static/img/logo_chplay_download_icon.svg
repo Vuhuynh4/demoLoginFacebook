@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135px" height="41px" viewBox="0 0 135 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Button - Play Store</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="19.2147947%" y1="-35.1571758%" x2="69.3023416%" y2="93.5367562%" id="linearGradient-1">
+            <stop stop-color="#19A3B4" offset="0%"></stop>
+            <stop stop-color="#5BC3AF" offset="34.816763%"></stop>
+            <stop stop-color="#C8F7A6" offset="92.2336229%"></stop>
+            <stop stop-color="#D7FEA5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M12.4021932,6.0841221 L1.59665098,0.181925029 C1.29026522,0.0154037857 1.00768132,-0.0233337846 0.778778241,0.0476012467 L9.62952863,8.83901735 L12.4021932,6.0841221" id="path-2"></path>
+        <linearGradient x1="-14.698314%" y1="-114.321644%" x2="74.8444046%" y2="114.156353%" id="linearGradient-4">
+            <stop stop-color="#FC227C" offset="0%"></stop>
+            <stop stop-color="#FEEB7B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="28.1511582%" y1="-14.8137139%" x2="48.1878808%" y2="82.8944571%" id="linearGradient-5">
+            <stop stop-color="#0E4DA0" offset="0%"></stop>
+            <stop stop-color="#6BFED4" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.778271818,0.0476012467 C0.449603454,0.149727568 0.236905899,0.480254629 0.236905899,0.980321445 L0.23893159,16.7188428 C0.23893159,17.2133757 0.445045649,17.5388719 0.764091981,17.6475384 L9.62952863,8.84052661 L0.778271818,0.0476012467" id="path-6"></path>
+        <linearGradient x1="132.244588%" y1="16.465744%" x2="5.95853392%" y2="126.310354%" id="linearGradient-8">
+            <stop stop-color="#FC472E" offset="0%"></stop>
+            <stop stop-color="#FC472F" offset="0.331892433%"></stop>
+            <stop stop-color="#893CD8" offset="100%"></stop>
+        </linearGradient>
+        <path d="M0.764091981,17.6475384 C0.994514332,17.7250135 1.28266888,17.6887914 1.59665098,17.5177423 L12.4148538,11.6074959 L9.62952863,8.84052661 L0.764091981,17.6475384" id="path-9"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="web01" transform="translate(-449.000000, -927.000000)">
+            <g id="Group-18" transform="translate(183.000000, 107.000000)">
+                <g id="Group-32" transform="translate(118.500000, 778.484967)">
+                    <g id="Group-13" transform="translate(0.604527, 42.001883)">
+                        <g id="Button---Play-Store" transform="translate(147.466528, 0.000000)">
+                            <rect id="Button" stroke="#DADADA" stroke-width="0.5" fill="#FFFFFF" x="0" y="0" width="133.333333" height="40" rx="6"></rect>
+                            <g id="Icon---Google-Play" transform="translate(11.868687, 10.606061)">
+                                <mask id="mask-3" fill="white">
+                                    <use xlink:href="#path-2"></use>
+                                </mask>
+                                <use id="Fill-1" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                                <path d="M12.416373,11.6074959 L16.1051563,9.59263917 C16.8531427,9.18262463 16.8531427,8.51553349 16.1051563,8.10652512 L12.4026996,6.0841221 L9.62952863,8.83901735 L12.416373,11.6074959" id="Fill-2" fill="url(#linearGradient-4)"></path>
+                                <mask id="mask-7" fill="white">
+                                    <use xlink:href="#path-6"></use>
+                                </mask>
+                                <use id="Fill-3" fill="url(#linearGradient-5)" xlink:href="#path-6"></use>
+                                <mask id="mask-10" fill="white">
+                                    <use xlink:href="#path-9"></use>
+                                </mask>
+                                <use id="Fill-4" fill="url(#linearGradient-8)" xlink:href="#path-9"></use>
+                            </g>
+                            <g id="Group-22" transform="translate(38.636364, 7.944444)" fill="#4D4D4D" font-size="8">
+                                <text id="Google-play-store" font-family="SFUIDisplay-Bold, SF UI Display" font-weight="bold">
+                                    <tspan x="0" y="18.7777778">GOOGLE PLAY STORE</tspan>
+                                </text>
+                                <text id="Tải-ứng-dụng-từ" font-family="SFUIDisplay-Light, SF UI Display" font-weight="300">
+                                    <tspan x="0" y="8.74444464">TẢI ỨNG DỤNG TỪ</tspan>
+                                </text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
