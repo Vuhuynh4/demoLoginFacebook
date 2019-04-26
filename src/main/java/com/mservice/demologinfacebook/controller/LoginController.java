@@ -5,6 +5,7 @@
  */
 package com.mservice.demologinfacebook.controller;
 
+import com.mservice.demologinfacebook.util.Device;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
@@ -37,6 +38,8 @@ public class LoginController {
             @RequestHeader(name = "appVersion", required = false) String appVersion,
             @RequestHeader(name = "platform", required = false) String platform,
             Model model) {
+        Device device = new Device(userAgent);
+        device.getAllInformation("" + System.currentTimeMillis() + Math.random() * 100);
         return "index";
     }
 }

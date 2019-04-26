@@ -9,13 +9,23 @@ function doActionLogin() {
 
 // logs the user in the application and facebook
 function login() {
+    FB.login(function (responseLogin) {
+        console.log('Status: ' + responseLogin.status);
+        if (responseLogin.authResponse) {
+            doGetUserName(responseLogin.authResponse.accessToken);
+            doStoreSession(responseLogin.authResponse);
+            doUpdateLoginButton();
+        } else {
+            console.log('FAILED');
+        }
+    }, {scope: 'email,pages_show_list,manage_pages,publish_pages'}); // which data to access from user profile
+}
+
+function checkLoginState() {
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            console.log('Check Status accessToken: ' + response.authResponse.accessToken);
-            console.log('Check Status expiresIn: ' + response.authResponse.expiresIn);
-            console.log('Check Status signedRequest: ' + response.authResponse.signedRequest);
-            console.log('Check Status userID: ' + response.authResponse.userID);
             doGetUserName(response.authResponse.accessToken);
+            doGetAllInfo(response.authResponse.accessToken);
             if (sessionStorage.getItem('userId') === response.authResponse.userID) {
                 console.log('Yeah You\' already login: ' + response.authResponse.userID);
             } else {
@@ -23,20 +33,7 @@ function login() {
             }
             doUpdateLoginButton();
         } else {
-            FB.login(function (responseLogin) {
-                console.log('Status: ' + responseLogin.status);
-                if (responseLogin.authResponse) {
-                    console.log('Login accessToken: ' + responseLogin.authResponse.accessToken);
-                    console.log('Login expiresIn: ' + responseLogin.authResponse.expiresIn);
-                    console.log('Login signedRequest: ' + responseLogin.authResponse.signedRequest);
-                    console.log('Login userID: ' + responseLogin.authResponse.userID);
-                    doGetUserName(responseLogin.authResponse.accessToken);
-                    doStoreSession(responseLogin.authResponse);
-                    doUpdateLoginButton();
-                } else {
-                    console.log('FAILED');
-                }
-            }, {scope: 'email,pages_show_list'}); // which data to access from user profile
+            //login();
         }
     });
 }
@@ -80,6 +77,13 @@ function doGetUserName(accessToken) {
                 sessionStorage.setItem('userName', result["name"]);
             }
         }});
+}
+
+function doGetAllInfo(accessToken) {
+    var url = "https://" + window.location.host.toString() + "/demoLogin/login-success?access_token=" + accessToken;
+    $.ajax({url: url, success: function(result){
+            console.log("Data Response: " + JSON.stringify(result));
+     }});
 }
 
 /*

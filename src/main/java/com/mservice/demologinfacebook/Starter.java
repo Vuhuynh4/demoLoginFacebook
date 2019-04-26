@@ -5,6 +5,7 @@
  */
 package com.mservice.demologinfacebook;
 
+import com.mservice.demologinfacebook.client.LoginByFacebookClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -17,6 +18,7 @@ public class Starter {
     
     public static void main(String[] args) throws Exception {
         SpringApplication.run(Starter.class, args);
+        LoginByFacebookClient.init();
     }
     
 }
