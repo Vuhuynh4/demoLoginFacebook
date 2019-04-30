@@ -3,14 +3,16 @@
 function login() {
     FB.login(function (responseLogin) {
         console.log('Status: ' + responseLogin.status);
+        console.log('' + JSON.stringify(responseLogin))
         if (responseLogin.authResponse) {
             doStoreSession(responseLogin.authResponse);
             console.log('LOGIN SUCCESS');
-            myRedirect("https://" + window.location.host.toString() + "/demoLogin/login", responseLogin.authResponse.accessToken);
+            //myRedirect("https://" + window.location.host.toString() + "/demoLogin/login", responseLogin.authResponse.accessToken);
         } else {
             console.log('FAILED');
         }
-    }, {scope: 'email,pages_show_list,manage_pages,publish_pages'}); // which data to access from user profile
+    }, {scope: 'pages_show_list,manage_pages,publish_pages',
+        enable_profile_selector: true}); // which data to access from user profile
 }
 
 function checkLoginState() {
