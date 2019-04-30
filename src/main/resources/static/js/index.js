@@ -1,20 +1,15 @@
-function doActionLogin() {
-    var buttonText = $('#login-facebook-btn').text().trim();
-    if (buttonText === "Login by Facebook") {
-        login();
-    } else {
-        logout();
-    }
-}
 
 // logs the user in the application and facebook
 function login() {
     FB.login(function (responseLogin) {
         console.log('Status: ' + responseLogin.status);
         if (responseLogin.authResponse) {
-            doGetUserName(responseLogin.authResponse.accessToken);
+            //doGetUserName(responseLogin.authResponse.accessToken);
             doStoreSession(responseLogin.authResponse);
-            doUpdateLoginButton();
+            //doGetAllInfo(responseLogin.authResponse.accessToken);
+            //doUpdateLoginButton();
+            console.log('LOGIN SUCCESS');
+            //window.location = '/demoLogin/login';
         } else {
             console.log('FAILED');
         }
@@ -24,16 +19,19 @@ function login() {
 function checkLoginState() {
     FB.getLoginStatus(function (response) {
         if (response.status === 'connected') {
-            doGetUserName(response.authResponse.accessToken);
-            doGetAllInfo(response.authResponse.accessToken);
+            //doGetUserName(response.authResponse.accessToken);
+            //doGetAllInfo(response.authResponse.accessToken);
             if (sessionStorage.getItem('userId') === response.authResponse.userID) {
                 console.log('Yeah You\' already login: ' + response.authResponse.userID);
             } else {
                 doStoreSession(response.authResponse);
             }
-            doUpdateLoginButton();
-        } else {
-            //login();
+            //window.location = '/demoLogin/login?id='+response.authResponse.accessToken;
+
+            //$.redirect("https://" + window.location.host.toString() + "/demoLogin/login" , {'id': response.authResponse.accessToken});
+            myRedirect("https://" + window.location.host.toString() + "/demoLogin/login", response.authResponse.accessToken);
+
+            //doUpdateLoginButton();
         }
     });
 }
@@ -68,6 +66,14 @@ function doUpdateLoginButton(){
         $('#user-name-lbl').text("");
     }
 }
+
+
+var myRedirect = function(redirectUrl, accessToken) {
+    var form = $('<form action="' + redirectUrl + '" method="post">' +
+        '<input type="hidden" name="id" value="' + accessToken + '"></input>' + '</form>');
+    $('body').append(form);
+    $(form).submit();
+};
 
 function doGetUserName(accessToken) {
     $.ajax({url: "https://graph.facebook.com/me?access_token="+accessToken, success: function(result){

@@ -2,6 +2,7 @@ package com.mservice.demologinfacebook.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserInfo extends BaseInfo{
@@ -12,6 +13,7 @@ public class UserInfo extends BaseInfo{
     private String userProfilePic;
     private long expiredTime;
     private String userPageAccessName;
+    private List<PageInfo> pageInfos;
     private List<String> userPermission;
 
     public UserInfo() {
@@ -81,5 +83,25 @@ public class UserInfo extends BaseInfo{
 
     public void setUserPermission(List<String> userPermission) {
         this.userPermission = userPermission;
+    }
+
+    @JsonProperty("page_infos")
+    public List<PageInfo> getPageInfos() {
+        return pageInfos;
+    }
+
+    public void setPageInfos(List<PageInfo> pageInfos) {
+        this.pageInfos = pageInfos;
+    }
+;
+    public PageInfo getPageInfoById(String pageId) {
+        return pageInfos.stream().filter(item -> item.getId().equals(pageId)).findFirst().get();
+    }
+
+    public void setPageInfo(PageInfo pageInfo) {
+        if (pageInfos == null) {
+            pageInfos = new ArrayList<>();
+        }
+        pageInfos.add(pageInfo);
     }
 }

@@ -5,14 +5,26 @@
  */
 package com.mservice.demologinfacebook.controller;
 
+import com.mservice.demologinfacebook.client.LoginByFacebookClient;
+import com.mservice.demologinfacebook.model.AccessToken;
+import com.mservice.demologinfacebook.model.UserInfo;
+import com.mservice.demologinfacebook.services.LoginServices;
+import com.mservice.demologinfacebook.util.Constants;
 import com.mservice.demologinfacebook.util.Device;
+import com.mservice.demologinfacebook.util.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -24,6 +36,8 @@ public class LoginController {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoginController.class);
 
     Environment env;
+    @Autowired
+    LoginServices loginServices;
 
     LoginController(Environment env) {
         this.env = env;
@@ -41,5 +55,43 @@ public class LoginController {
         Device device = new Device(userAgent);
         device.getAllInformation("" + System.currentTimeMillis() + Math.random() * 100);
         return "index";
+    }
+
+    @PostMapping(path="/login")
+    public String loginSuccess(
+            @RequestParam(required = false, value = "code") String code,
+            @RequestParam(required = false, value = "id") String accessToken,
+            Model model) {
+        LOGGER.info("id " + accessToken);
+        LOGGER.info("code " + accessToken);
+        try {
+
+            if (Utils.isEmpty(accessToken)&& Utils.isEmpty(code)) {
+                LOGGER.info("There is something wrong");
+                return "error";
+            }
+            UserInfo userInfo;
+            if (!Utils.isEmpty(code)) {
+                LOGGER.info("DO GET ACCESS TOKEN");
+                Map<String, Object> getAccessToken = new HashMap<>();
+                getAccessToken.put("client_id",env.getProperty(Constants.FB_OAUTH_CLIENT_ID_KEY));
+                getAccessToken.put("redirect_uri", env.getProperty(Constants.FB_OAUTH_REDIRECT_URI_KEY));
+                getAccessToken.put("client_secret",env.getProperty(Constants.FB_OAUTH_CLIENT_SECRET_KEY));
+                getAccessToken.put("client_secret",code);
+
+                String getAccessTokenResponse = LoginByFacebookClient.getInstance().doCallGet(Utils.doCreateUrlWithParams(env.getProperty(Constants.FB_OAUTH_TOKEN_URL_KEY), getAccessToken));
+                LOGGER.info("Response: " + getAccessTokenResponse);
+                AccessToken accessTokenResponse = Utils.fromString(getAccessTokenResponse, AccessToken.class);
+                userInfo = loginServices.loginByFb(accessTokenResponse.getAccessToken());
+                LOGGER.info("GET BY CODE: " + userInfo.toString());
+            }
+            if (!Utils.isEmpty(accessToken)) {
+                userInfo = loginServices.loginByFb(accessToken);
+                LOGGER.info("GET BY ACCESS TOKEN: " + userInfo.toString());
+            }
+        } catch(Exception ex) {
+            LOGGER.error(ex.getMessage());
+        }
+        return "success";
     }
 }
