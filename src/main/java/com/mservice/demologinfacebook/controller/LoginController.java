@@ -54,7 +54,7 @@ public class LoginController {
             Model model) {
         Device device = new Device(userAgent);
         device.getAllInformation("" + System.currentTimeMillis() + Math.random() * 100);
-        return "index";
+        return "index_backup";
     }
 
     @PostMapping(path="/login")
@@ -63,15 +63,16 @@ public class LoginController {
             @RequestParam(required = false, value = "id") String accessToken,
             Model model) {
         LOGGER.info("id " + accessToken);
-        LOGGER.info("code " + accessToken);
+        LOGGER.info("code " + code);
         try {
 
             if (Utils.isEmpty(accessToken)&& Utils.isEmpty(code)) {
                 LOGGER.info("There is something wrong");
                 return "error";
             }
-            UserInfo userInfo;
+            UserInfo userInfo = new UserInfo();
             if (!Utils.isEmpty(code)) {
+                LOGGER.info("GET BY CODE: " + userInfo.toString());
                 LOGGER.info("DO GET ACCESS TOKEN");
                 Map<String, Object> getAccessToken = new HashMap<>();
                 getAccessToken.put("client_id",env.getProperty(Constants.FB_OAUTH_CLIENT_ID_KEY));
@@ -83,15 +84,16 @@ public class LoginController {
                 LOGGER.info("Response: " + getAccessTokenResponse);
                 AccessToken accessTokenResponse = Utils.fromString(getAccessTokenResponse, AccessToken.class);
                 userInfo = loginServices.loginByFb(accessTokenResponse.getAccessToken());
-                LOGGER.info("GET BY CODE: " + userInfo.toString());
             }
             if (!Utils.isEmpty(accessToken)) {
-                userInfo = loginServices.loginByFb(accessToken);
                 LOGGER.info("GET BY ACCESS TOKEN: " + userInfo.toString());
+                userInfo = loginServices.loginByFb(accessToken);
+
             }
+            model.addAttribute("userInfo", userInfo);
         } catch(Exception ex) {
             LOGGER.error(ex.getMessage());
         }
-        return "success";
+        return "success_backup";
     }
 }

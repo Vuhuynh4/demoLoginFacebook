@@ -1,91 +1,42 @@
-<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{fragments/main_layout}">
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>Login Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <link rel="icon" type="image/png" sizes="32x32" th:href="@{img/favicon-32x32.png}">
-        <script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="webjars/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-        <script type="text/javascript" th:src="@{/js/index.js}"></script>
-        <link rel="stylesheet" type="text/css" href="webjars/bootstrap/4.1.1/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="webjars/font-awesome/5.1.0/css/all.css"/>
-        <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    </head>
-    <body onload="checkLoginState()">
-        <div id="fb-root"></div>
-        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=415899608957234&autoLogAppEvents=1"></script>
-        <div id="overlay"></div>
-        <div id="loading_wrapper"></div>
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="container">
-            <div class="row auth-main-qr-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class=" main-left-banner text-center">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="text-center result-main-btn-content">
-                                            <div class="fb-login-button" data-width="250" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true" onlogin="login()"></div>
-                                            <!--<button id="login-facebook-btn" class="btn btn-primary u-mt-15">
-                                                <i class="fa fa-facebook-official u-mr-5" aria-hidden="true"></i>
-                                                Login by Facebook
-                                            </button> <b id="user-name-lbl"></b>-->
-                                        </div>
-                                    </div>  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr/>
-            <footer>
-                <div class="row" style="padding-top:0px; padding-bottom: 20px">
-                    <div class="col-md-6 dislay-logo" style="justify-content: flex-start">
-                        <a class="app-store" href="https://itunes.apple.com/us/app/momo-chuyen-nhan-tien/id918751511?mt=8" target="_blank"><img th:src="@{/img/logo_ios_download_icon.svg}" alt="momo-store" width="160"/></a> 
-                        <a class="gg-play" href="https://play.google.com/store/apps/details?id=com.mservice.momotransfer&amp;utm_medium=mobileweb&amp;utm_source=mobile&amp;utm_campaign=m2n" target="_blank"><img th:src="@{/img/logo_chplay_download_icon.svg}" alt="momo-store" width="160"/></a>
-                    </div>
-                    <div class="col-md-6 dislay-logo" style="justify-content: flex-end;padding-right: 40px;">
-                        <img th:src="@{/img/phone.svg}" width="35"/> &nbsp;&nbsp; 1900 54 54 41 &nbsp;&nbsp;<img th:src="@{/img/email.svg}" width="35"/> &nbsp;&nbsp; hotro@momo.vn
-                    </div>
-                </div>
-            </footer>
-        </div>
+<head>
+    <title>Welcome to Login Demo Page</title>
+    <script type="text/javascript" th:src="@{/js/login.js}"></script>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=415899608957234&autoLogAppEvents=1"></script>
+    <div class="jumbotron">
+        <div class="fb-login-button" data-width="250" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true" onlogin="login()"></div>
+    </div>
+</div>
+<script type="text/javascript">
 
-        <script type="text/javascript">
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '415899608957234',
+            status: true, // check login status
+            cookie: true, // enable cookies to allow the server to access the session
+            oauth: true,
+            xfbml: false,
+            version: 'v3.2'
+        });
 
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '415899608957234',
-                status: true, // check login status
-                cookie: true, // enable cookies to allow the server to access the session
-                oauth: true,
-                xfbml: false,
-                version: 'v3.2'
-            });
+        FB.AppEvents.logPageView();
 
-            FB.AppEvents.logPageView();
+    };
 
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-        </script>
-    </body>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+</body>
 </html>

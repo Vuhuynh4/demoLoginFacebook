@@ -1,5 +1,6 @@
 package com.mservice.demologinfacebook.services;
 
+import com.mservice.demologinfacebook.cache.CacheManager;
 import com.mservice.demologinfacebook.client.LoginByFacebookClient;
 import com.mservice.demologinfacebook.model.LongLiveAccessToken;
 import com.mservice.demologinfacebook.model.PageInfo;
@@ -29,16 +30,23 @@ public class LoginServices {
         try {
             String userNameResponse = callFbToGetUserName(accessToken);
             userInfo = Utils.fromString(userNameResponse, UserInfo.class);
+
+            UserInfo cacheUserInfo = (UserInfo) CacheManager.getInstance().getCache(userInfo.getUserId());
+            if (cacheUserInfo != null) {
+                LOGGER.info("[" + userInfo.getUserId() + "] DO GET USER INFO IN CACHE: " + Utils.toString(cacheUserInfo));
+                return cacheUserInfo;
+            }
             userInfo.setAccessToken(accessToken);
             String longLivedAccessTokenResponse = callFbToGetLongAccessToken(accessToken, userInfo);
             LongLiveAccessToken longLiveAccessToken = Utils.fromString(longLivedAccessTokenResponse, LongLiveAccessToken.class);
             userInfo.setLongAccessToken(longLiveAccessToken.getAccessToken());
 
             callFbToGetPageInfoOfUser(userInfo);
+            LOGGER.info("[" + userInfo.getUserId() + "] ADD USER INFO CACHE " + Utils.toString(userInfo));
+            CacheManager.getInstance().addCache(userInfo.getUserId(), userInfo.getUserId(), 3600000, userInfo);
         } catch (Exception ex) {
             LOGGER.error(ex.getMessage());
         }
-
         return userInfo;
     }
 
@@ -50,9 +58,7 @@ public class LoginServices {
         LOGGER.info("[" + userInfo.getUserId() + "] Response: " + pageInfoResponse);
         PageLists pageLists = Utils.fromString(pageInfoResponse, PageLists.class);
         for (PageInfo item: pageLists.getData()) {
-            //if(item.getId().equals(env.getProperty(Constants.FB_OAUTH_PAGE_ID_KEY))){
-                userInfo.setPageInfo(item);
-            //}
+            userInfo.setPageInfo(item);
         }
     }
 

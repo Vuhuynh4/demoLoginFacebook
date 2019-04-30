@@ -81,6 +81,14 @@ public class Utils {
         return object == null ? true : (object instanceof String && ((String) object).trim().isEmpty());
     }
 
+    public static void safeSleep(long sleepTime) {
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException var3) {
+        }
+
+    }
+
     public static String encodeBase64URL(byte[] s) {
         if (Utils.isEmpty(s)) {
             return "";
