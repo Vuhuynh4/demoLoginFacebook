@@ -9,7 +9,7 @@ public class Constants {
     public static final String FB_OAUTH_GRANT_TYPE_KEY = "fb.oauth.grant.type";
     public static final String FB_OAUTH_CLIENT_ID_KEY = "fb.oauth.client.id";
     public static final String FB_OAUTH_CLIENT_SECRET_KEY = "fb.oauth.client.secret";
-    public static final String FB_OAUTH_PAGE_ID_KEY = "fb.oauth.page.id";
+    public static final String FB_LINK_WEBHOOK_TO_PAGE_URL_KEY_= "fb.link.webhook.to.page.url";
 
 
 }

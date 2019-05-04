@@ -23,7 +23,7 @@ function checkLoginState() {
             } else {
                 doStoreSession(response.authResponse);
             }
-            myRedirect("https://" + window.location.host.toString() + "/demoLogin/login", response.authResponse.accessToken);
+            myRedirect("https://" + window.location.host.toString() + "/magneto/login", response.authResponse.accessToken);
         }
     });
 }

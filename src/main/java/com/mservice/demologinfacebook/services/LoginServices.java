@@ -34,6 +34,15 @@ public class LoginServices {
             UserInfo cacheUserInfo = (UserInfo) CacheManager.getInstance().getCache(userInfo.getUserId());
             if (cacheUserInfo != null) {
                 LOGGER.info("[" + userInfo.getUserId() + "] DO GET USER INFO IN CACHE: " + Utils.toString(cacheUserInfo));
+
+                    cacheUserInfo.getPageInfos().stream().forEach(item -> {
+                        try {
+                            callFbToLinkWebHookToPage(item);
+                        }catch(Exception ex) {
+                            LOGGER.error(ex.getMessage());
+                        }
+                    });
+
                 return cacheUserInfo;
             }
             userInfo.setAccessToken(accessToken);
@@ -59,6 +68,7 @@ public class LoginServices {
         PageLists pageLists = Utils.fromString(pageInfoResponse, PageLists.class);
         for (PageInfo item: pageLists.getData()) {
             userInfo.setPageInfo(item);
+            callFbToLinkWebHookToPage(item);
         }
     }
 
@@ -85,4 +95,25 @@ public class LoginServices {
         return userNameResponse;
     }
 
+    private String callFbToLinkWebHookToPage(PageInfo pageInfo) throws Exception {
+        LOGGER.info("DO CALL FB TO LINK WEBHOOK TO USER PAGE: ["+pageInfo.getId()+"] - ["+pageInfo.getName()+"]");
+
+        String url = "https://graph.facebook.com/v3.3/"+
+                     pageInfo.getId()+
+                     "/subscribed_apps?subscribed_fields=%20messages&access_token="+
+                    pageInfo.getAccessToken();
+
+        String result = LoginByFacebookClient.getInstance().doCallPost(url);
+        LOGGER.info("Response: " + result);
+        return result;
+    }
+
 }
+
+
+/***
+ *
+ * curl -i -X POST \
+ *  "https://graph.facebook.com/v3.3/1230295813763775/subscribed_apps?subscribed_fields=%20messages&access_token=EAAQ6gnw49tUBAAD59wZAgQTPrhZC01kMS6Qn09srIQRxfKrFZABVZCKhmWmNtAHtRqFcnwILc3GZBg4uDOY444yMfkad5qggC4GD6yZCZCBjzRHuLSjSVXOmyojf1hFkqROdftjbPTMJZClZCQ1D4Fi1CpusrxGaZAmgrwD7nHpvsd1q75MDG2NEzZBn4r8CXPCAecZD"
+ *
+ */
